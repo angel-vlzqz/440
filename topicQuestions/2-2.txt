@@ -1,0 +1,39 @@
+[Audio Input] → [Preprocessing]
+                     ↓
+[Feature Extraction (MFCC/Filterbank)] 
+                     ↓
+[Voice Activity Detection]
+                     ↓
+[Neural Network Inference]
+                     ↓
+[Post-processing/Decision Logic]
+                     ↓
+[Command Output/Action]
+
+Key Differences for Microcontroller Implementation:
+
+1. Resource Constraints:
+   - Limited RAM (typically KB vs GB)
+   - Limited processing power
+   - Power consumption critical
+   - Fixed-point vs floating-point math
+
+2. Architecture Adaptations:
+   - Simplified feature extraction
+   - Smaller model architectures
+   - Quantized weights (8-bit or less)
+   - Optimized memory access patterns
+   - Limited vocabulary size
+
+3. Processing Approach:
+   - Stream processing vs batch
+   - Reduced sampling rates
+   - Shorter analysis windows
+   - Hardware-specific optimizations
+
+4. Implementation Considerations:
+   - No operating system overhead
+   - Direct hardware access
+   - Real-time constraints
+   - Limited error recovery options
+   - Firmware update challenges

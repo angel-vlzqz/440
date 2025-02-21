@@ -1,0 +1,66 @@
+
+
+deploying ML on a tiny microcontroller is different from putting it on a regular computer:
+
+1. Size
+On my laptop, I can use big frameworks like TensorFlow:
+```python
+import tensorflow as tf
+model = tf.keras.models.load_model('my_sine_model.h5')
+```
+
+But on a microcontroller (like an Arduino Nano 33), we need smaller versions:
+```cpp
+#include <TensorFlowLite.h>
+#include "sine_model.h"      // Our compressed model
+```
+
+2. Converting the Model
+We can't copy-paste our model to the microcontroller. We need to make it smaller first:
+```python
+# Convert our regular model to a smaller version
+import tensorflow as tf
+
+# Convert the model to TensorFlow Lite
+converter = tf.lite.TFLiteConverter.from_saved_model('my_sine_model')
+converter.optimize_for_size()
+tflite_model = converter.convert()
+
+# Save it
+with open('sine_model.tflite', 'wb') as f:
+    f.write(tflite_model)
+```
+
+3. Running on the Microcontroller
+Here's how we use it on an Arduino (super simplified):
+```cpp
+// Arduino code
+#include <TensorFlowLite.h>
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  float angle = 45.0;  // Input angle
+  float prediction = model.predict(angle);
+  
+  Serial.print("Sine of ");
+  Serial.print(angle);
+  Serial.print(" is about ");
+  Serial.println(prediction);
+  
+  delay(1000);  // Wait a second
+}
+```
+
+The big differences are:
+- We have less memory
+- Can't use Python (usually use C++)
+- Need to be super careful about power usage
+- Everything needs to be smaller and simpler
+
+Testing is different too - instead of just running it on our computer, we have to:
+1. Upload to the device
+2. Monitor through Serial port
+3. Test with real sensors

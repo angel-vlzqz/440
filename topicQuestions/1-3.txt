@@ -1,0 +1,24 @@
+To train a machine learning model to calculate a trigonometric function (like sine), 
+we'd need pairs of input and output values. Similarly to teaching the computer by 
+showing it examples of "if you give me this angle, the answer should be that."
+
+
+```python
+# angle_in_degrees, sine_value
+0, 0.0
+30, 0.5
+45, 0.707
+60, 0.866
+90, 1.0
+120, 0.866
+135, 0.707
+150, 0.5
+180, 0.0
+210, -0.5
+```
+
+The first number in each row is what we're giving the computer (the input angle in degrees)
+The second number is what we want the computer to learn to answer with (the sine value)
+
+I rounded the numbers to make it easier to read, but in real life, but you'd want more 
+decimal places for accuracy ideally.

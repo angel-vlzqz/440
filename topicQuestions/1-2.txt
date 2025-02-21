@@ -1,0 +1,25 @@
+The Main Differences with desktops vs microcontrollers:
+- Microcontrollers have WAY less memory
+- Processing power is much smaller
+- Battery life is important since they often run on tiny batteries
+
+Workflow:
+- We DON'T train neural networks on the microcontroller
+- Instead, we train them on our regular computer or laptop
+- like baking a cake at home and then taking it to a party lol
+
+Size constraints:
+- We need to shrink our neural network (quantization)
+- Convert big decimal numbers to tiny integers
+- Remove parts of the network we don't really need (pruning)
+
+Tools:
+- Use special frameworks like TensorFlow Lite for Microcontrollers or Edge Impulse
+- These tools help convert our big models into tiny versions
+  - They give us special code that runs well on microcontrollers
+
+Testing:
+- Test the tiny model to make sure it still works well
+- Check if it fits in the microcontroller's memory
+- Make sure it runs fast
+- Calculate how long the battery will last

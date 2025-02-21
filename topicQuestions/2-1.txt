@@ -1,0 +1,17 @@
+To design a wake word recognizer, you would first do the data collection phase, 
+where diverse audio samples of the target wake 
+word and non-wake words are gathered across different speakers, accents, 
+and acoustic environments to ensure robust training given the noise. Next comes the feature extraction 
+phase, where the raw audio is translated into acoustic features (like 
+MFCCs, mel spectrograms, or filterbank energies) that are meant to capture the essential 
+characteristics of speech while reducing the complexity of the problem. The model architecture design,
+an appropriate neural network structure (such as CNNs, RNNs, or 
+transformers) is selected and optimized for the specific wake word detection task. In the 
+training phase, where the model learns to discriminate between wake word and
+non-wake word using the prepared dataset, we use techniques 
+like data augmentation and noise injection for better generalization. The 
+optimization phase involves fine-tuning the model's hyperparameters and
+apply techniques like quantization or pruning to improve efficiency. Finally, 
+the evaluation and deployment phase grades the model's performance metrics (such
+as false accept rate, false reject rate, and latency) and adapts accordingly based
+on the constraints of the real-world deployment.

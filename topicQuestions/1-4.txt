@@ -1,0 +1,54 @@
+To start, we need to import our required libraries and create some training data.
+
+```python
+import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create training data (lots of angles and their sine values)
+angles = np.linspace(0, 360, 720)  # 720 angles from 0 to 360 degrees
+# Convert to radians because numpy's sin works with radians
+angles_rad = np.radians(angles)
+sine_values = np.sin(angles_rad)
+
+# Reshape data for TensorFlow
+X = angles.reshape(-1, 1)  # input
+y = sine_values.reshape(-1, 1)  # expected output
+```
+
+Then, we build a simple neural network model by building layers of neurons that will
+be trained to learn the pattern between the input and output.
+```python
+# Create the model - we'll keep it super simple!
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(16, activation='relu', input_shape=(1,)),  # First layer
+    tf.keras.layers.Dense(16, activation='relu'),                    # Hidden layer
+    tf.keras.layers.Dense(1)                                        # Output layer
+])
+
+# Get the model ready to learn
+model.compile(
+    optimizer='adam',
+    loss='mse'  # mean squared error - measures how wrong our predictions are
+)
+```
+
+Then we train
+```python
+# Train the model
+history = model.fit(
+    X, y,
+    epochs=500,           # number of times to practice
+    batch_size=32,       # how many examples to look at at once
+    verbose=0
+)
+
+# Test it out!
+test_angles = np.array([0, 30, 45, 60, 90])
+predictions = model.predict(test_angles.reshape(-1, 1))
+
+# Print some results
+for angle, pred in zip(test_angles, predictions):
+    print(f"Sine of {angle}° = {pred[0]:.3f}")
+```
+

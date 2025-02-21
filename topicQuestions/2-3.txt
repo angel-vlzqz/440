@@ -1,0 +1,12 @@
+Ideally, you typically need training data that is labeled and consists of word samples. In CSV format, this is how it would look like:
+text,label
+"hello world",hello_world
+"machine learning",machine_learning
+"artificial",artificial
+"neural network",neural_network
+"python code",python_code
+"deep learning",deep_learning
+"computer vision",computer_vision
+"natural language",natural_language
+"data science",data_science
+"algorithm",algorithm

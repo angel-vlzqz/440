@@ -1,0 +1,19 @@
+digraph {
+	"1. Define Application Requirements" [label="1. Define Application Requirements" fillcolor=lightblue shape=box style=filled]
+	"2. Choose or Train a Speech Model" [label="2. Choose or Train a Speech Model" fillcolor=lightblue shape=box style=filled]
+	"3. Convert the Model for Edge Deployment" [label="3. Convert the Model for Edge Deployment" fillcolor=lightblue shape=box style=filled]
+	"4. Preprocess Audio Input" [label="4. Preprocess Audio Input" fillcolor=lightblue shape=box style=filled]
+	"5. Develop Microcontroller Code" [label="5. Develop Microcontroller Code" fillcolor=lightblue shape=box style=filled]
+	"6. Optimize for Performance" [label="6. Optimize for Performance" fillcolor=lightblue shape=box style=filled]
+	"7. Deploy to the Microcontroller" [label="7. Deploy to the Microcontroller" fillcolor=lightblue shape=box style=filled]
+	"8. Test and Debug" [label="8. Test and Debug" fillcolor=lightblue shape=box style=filled]
+	"9. Fine-Tune and Iterate" [label="9. Fine-Tune and Iterate" fillcolor=lightblue shape=box style=filled]
+	"1. Define Application Requirements" -> "2. Choose or Train a Speech Model"
+	"2. Choose or Train a Speech Model" -> "3. Convert the Model for Edge Deployment"
+	"3. Convert the Model for Edge Deployment" -> "4. Preprocess Audio Input"
+	"4. Preprocess Audio Input" -> "5. Develop Microcontroller Code"
+	"5. Develop Microcontroller Code" -> "6. Optimize for Performance"
+	"6. Optimize for Performance" -> "7. Deploy to the Microcontroller"
+	"7. Deploy to the Microcontroller" -> "8. Test and Debug"
+	"8. Test and Debug" -> "9. Fine-Tune and Iterate"
+}

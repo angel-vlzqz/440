@@ -1,0 +1,38 @@
+So, first we would need to configure our GPU utilization. In my case, I have an M2 air, so we would need to use the Metal Perfomance Shaders in the configuration. 
+From our experience, we have had good luck using the CNN-LSTM model for processing audio.
+Then, we would capture the audio features in the form of spectrograms. Note that the audio data would need to be preprocessed into spectrograms before being fed into the model.
+Then, utilizing your GPU or MPS, we would train the model, and evaluate it.
+
+import tensorflow as tf
+import numpy as np
+from tensorflow.keras import layers, models
+
+# Check GPU availability
+print("GPU Available: ", tf.config.list_physical_devices('GPU'))
+
+# Create a simple CNN model for speech recognition
+model = models.Sequential([
+    layers.Input(shape=(timesteps, features)),  # Audio input shape
+    layers.Conv1D(32, 3, activation='relu'),
+    layers.MaxPooling1D(2),
+    layers.LSTM(64, return_sequences=True),
+    layers.Dense(32, activation='relu'),
+    layers.Dense(num_classes, activation='softmax')
+])
+
+# Compile model
+model.compile(
+    optimizer='adam',
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
+)
+
+# Train model on GPU
+with tf.device('/GPU:0'):
+    model.fit(
+        x_train,  # Audio features (e.g., spectrograms)
+        y_train,  # Word labels
+        epochs=10,
+        batch_size=32,
+        validation_split=0.2
+    )
