@@ -1,0 +1,26 @@
+# Core ML libraries
+tensorflow-macos
+tensorflow-metal  # Only needed for Apple Silicon, remove for Intel Macs
+torch
+torchvision
+
+# Data processing and visualization
+pandas
+numpy
+matplotlib
+seaborn
+
+# Image processing
+albumentations
+opencv-python
+
+# Machine learning tools
+scikit-learn
+tqdm
+
+# Jupyter notebook
+jupyter
+notebook
+
+# Experiment tracking (optional)
+wandb

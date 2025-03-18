@@ -1,0 +1,32 @@
+# Python virtual environment
+.venv/
+
+# Large datasets
+food-101/
+
+# Model files
+models/*.h5
+models/*.tflite
+
+# TensorFlow datasets
+tf_datasets/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large data files
+*.pkl
+nutrition_data/
+
+# Logs
+logs/
+*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db
