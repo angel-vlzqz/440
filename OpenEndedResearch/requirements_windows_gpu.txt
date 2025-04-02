@@ -1,0 +1,25 @@
+# Core ML libraries
+tensorflow==2.15.0  # Latest stable version with GPU support
+torch==2.2.0
+torchvision==0.17.0
+
+# Data processing and visualization
+pandas
+numpy
+matplotlib
+seaborn
+
+# Image processing
+albumentations
+opencv-python
+
+# Machine learning tools
+scikit-learn
+tqdm
+
+# Jupyter notebook
+jupyter
+notebook
+
+# GPU support
+nvidia-cudnn-cu12  # For CUDA 12 support 
