@@ -1,7 +1,7 @@
 # Social Networks Research Project
 
 ## Overview
-This project is part of CS 440 Social Networks course research work, focusing on machine learning applications in social network analysis. The project uses modern deep learning frameworks and follows a structured research methodology through Jupyter notebooks. The research is conducted using the Food101 dataset, a large-scale dataset containing 101 food categories with 1000 images per category.
+This project is part of CS 440 Social Networks course research work, which focuses on machine learning applications in social network analysis. The project uses modern deep learning frameworks and follows a structured research methodology through Jupyter notebooks. The research is conducted using the Food101 dataset, which is a large-scale dataset containing 101 food categories with 1000 images per category.
 
 ## Dataset
 The project utilizes the Food101 dataset, which consists of:
