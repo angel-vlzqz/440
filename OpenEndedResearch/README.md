@@ -16,6 +16,48 @@ The dataset is commonly used for:
 - Computer vision research
 - Deep learning model evaluation
 
+### Downloading the Dataset
+There are several ways to download the Food101 dataset:
+
+1. **Using TensorFlow Datasets (Recommended)**:
+   ```python
+   import tensorflow_datasets as tfds
+   
+   # Download and load the dataset
+   dataset, info = tfds.load('food101', 
+                           with_info=True,
+                           as_supervised=True)
+   ```
+
+2. **Using PyTorch**:
+   ```python
+   from torchvision.datasets import Food101
+   from torchvision import transforms
+   
+   # Define transformations
+   transform = transforms.Compose([
+       transforms.Resize((224, 224)),
+       transforms.ToTensor(),
+   ])
+   
+   # Download and load the dataset
+   train_dataset = Food101(root='./data', 
+                          split='train',
+                          download=True,
+                          transform=transform)
+   test_dataset = Food101(root='./data',
+                         split='test',
+                         download=True,
+                         transform=transform)
+   ```
+
+3. **Manual Download**:
+   - Visit the official Food101 website: [Food101 Dataset](https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/)
+   - Download the dataset (approximately 5GB)
+   - Extract the files to your project directory
+
+Note: The dataset is approximately 5GB in size. Ensure you have sufficient disk space and a stable internet connection for downloading.
+
 ## Project Structure
 ```
 .
